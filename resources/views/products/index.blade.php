@@ -172,15 +172,12 @@
                                 </div>
                             </div>
                             <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
-                                <h4 class="sidebar-widget-title">Categories </h4>
+                                <h4 class="sidebar-widget-title">Type </h4>
                                 <div class="shop-catigory">
                                     <ul>
-                                        <li><a href="shop.html">T-Shirt</a></li>
-                                        <li><a href="shop.html">Shoes</a></li>
-                                        <li><a href="shop.html">Clothing </a></li>
-                                        <li><a href="shop.html">Women </a></li>
-                                        <li><a href="shop.html">Baby Boy </a></li>
-                                        <li><a href="shop.html">Accessories </a></li>
+                                        <li><a href="shop.html">Fan Type</a></li>
+                                        <li><a href="shop.html">Fan TYpe</a></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
@@ -197,7 +194,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
+                            <!-- <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
                                 <h4 class="sidebar-widget-title">Refine By </h4>
                                 <div class="sidebar-widget-list">
                                     <ul>
@@ -221,32 +218,27 @@
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
                                 <h4 class="sidebar-widget-title">Size </h4>
                                 <div class="sidebar-widget-list">
                                     <ul>
+                                       
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">XL <span>4</span> </a>
+                                                <input type="checkbox" value=""> <a href="#">M <span>5</span> </a>
                                                 <span class="checkmark"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">L <span>5</span> </a>
+                                                <input type="checkbox" value=""> <a href="#">S <span>6</span> </a>
                                                 <span class="checkmark"></span>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">SM <span>6</span> </a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">XXL <span>7</span> </a>
+                                                <input type="checkbox" value=""> <a href="#">L <span>7</span> </a>
                                                 <span class="checkmark"></span>
                                             </div>
                                         </li>
@@ -284,7 +276,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="sidebar-widget shop-sidebar-border pt-40">
+                            <!-- <div class="sidebar-widget shop-sidebar-border pt-40">
                                 <h4 class="sidebar-widget-title">Popular Tags</h4>
                                 <div class="tag-wrap sidebar-widget-tag">
                                     <a href="#">Clothing</a>
@@ -293,7 +285,7 @@
                                     <a href="#">Women</a>
                                     <a href="#">Fashion</a>
                                 </div>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

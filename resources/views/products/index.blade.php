@@ -107,23 +107,23 @@
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap-2 text-center">
-                                                    <div class="product-rating-wrap">
+                                                    <!-- <div class="product-rating-wrap">
                                                         <div class="product-rating">
                                                             <i class="icon_star"></i>
                                                             <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>
+                                                            <i class="icon_star"></i>   
                                                             <i class="icon_star"></i>
                                                             <i class="icon_star gray"></i>
                                                         </div>
                                                         <span>(2)</span>
-                                                    </div>
-                                                    <h3><a href="product-details.html">Basic Joggin Shorts</a></h3>
+                                                    </div> -->
+                                                    <h3><a href="product-details.html">Name Fan</a></h3>
                                                     <div class="product-price-2">
-                                                        <span>$20.50</span>
+                                                        <span>Price Fan</span>
                                                     </div>
                                                 </div>
                                                 <div class="product-content-wrap-2 product-content-position text-center">
-                                                    <div class="product-rating-wrap">
+                                                    <!-- <div class="product-rating-wrap">
                                                         <div class="product-rating">
                                                             <i class="icon_star"></i>
                                                             <i class="icon_star"></i>
@@ -132,7 +132,7 @@
                                                             <i class="icon_star gray"></i>
                                                         </div>
                                                         <span>(2)</span>
-                                                    </div>
+                                                    </div> -->
                                                     <h3><a href="product-details.html">Basic Joggin Shorts</a></h3>
                                                     <div class="product-price-2">
                                                         <span>$20.50</span>
@@ -339,31 +339,31 @@
                             <div class="col-lg-5 col-md-6 col-12 col-sm-12">
                                 <div class="tab-content quickview-big-img">
                                     <div id="pro-1" class="tab-pane fade show active">
-                                        <img src="assets/images/product/product-1.jpg" alt="">
+                                        <img src="{{asset('user/images/product/product-1.jpg')}}" alt="">
                                     </div>
                                     <div id="pro-2" class="tab-pane fade">
-                                        <img src="assets/images/product/product-3.jpg" alt="">
+                                        <img src="{{asset('user/images/product/product-3.jpg')}}" alt="">
                                     </div>
                                     <div id="pro-3" class="tab-pane fade">
-                                        <img src="assets/images/product/product-6.jpg" alt="">
+                                        <img src="{{asset('user/images/product/product-6.jpg')}}" alt="">
                                     </div>
                                     <div id="pro-4" class="tab-pane fade">
-                                        <img src="assets/images/product/product-3.jpg" alt="">
+                                        <img src="{{asset('user/images/product/product-3.jpg')}}" alt="">
                                     </div>
                                 </div>
                                 <div class="quickview-wrap mt-15">
                                     <div class="quickview-slide-active nav-style-6">
-                                        <a class="active" data-toggle="tab" href="#pro-1"><img src="assets/images/product/quickview-s1.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-2"><img src="assets/images/product/quickview-s2.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-3"><img src="assets/images/product/quickview-s3.jpg" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-4"><img src="assets/images/product/quickview-s2.jpg" alt=""></a>
+                                        <a class="active" data-toggle="tab" href="#pro-1"><img src="{{asset('user/images/product/quickview-s1.jpg')}}" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-2"><img src="{{asset('user/images/product/quickview-s2.jpg')}}" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-3"><img src="{{asset('user/images/product/quickview-s3.jpg')}}" alt=""></a>
+                                        <a data-toggle="tab" href="#pro-4"><img src="{{asset('user/images/product/quickview-s2.jpg')}}" alt=""></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-7 col-md-6 col-12 col-sm-12">
                                 <div class="product-details-content quickview-content">
-                                    <h2>Simple Black T-Shirt</h2>
-                                    <div class="product-ratting-review-wrap">
+                                    <h2>Tên quạt</h2>
+                                    <!-- <div class="product-ratting-review-wrap">
                                         <div class="product-ratting-digit-wrap">
                                             <div class="product-ratting">
                                                 <i class="icon_star"></i>
@@ -380,22 +380,18 @@
                                             <span>62 Reviews</span>
                                             <span>242 orders</span>
                                         </div>
-                                    </div>
-                                    <p>Seamlessly predominate enterprise metrics without performance based process improvements.</p>
+                                    </div> -->
+                                    <p>Mô tả ngắn</p>
                                     <div class="pro-details-price">
                                         <span class="new-price">$75.72</span>
-                                        <span class="old-price">$95.72</span>
+                                        <!-- <span class="old-price">$95.72</span> -->
                                     </div>
                                     <div class="pro-details-color-wrap">
                                         <span>Color:</span>
                                         <div class="pro-details-color-content">
                                             <ul>
                                                 <li><a class="dolly" href="#">dolly</a></li>
-                                                <li><a class="white" href="#">white</a></li>
-                                                <li><a class="azalea" href="#">azalea</a></li>
-                                                <li><a class="peach-orange" href="#">Orange</a></li>
-                                                <li><a class="mona-lisa active" href="#">lisa</a></li>
-                                                <li><a class="cupid" href="#">cupid</a></li>
+                                             
                                             </ul>
                                         </div>
                                     </div>
@@ -403,11 +399,11 @@
                                         <span>Size:</span>
                                         <div class="pro-details-size-content">
                                             <ul>
-                                                <li><a href="#">XS</a></li>
+                                             
                                                 <li><a href="#">S</a></li>
                                                 <li><a href="#">M</a></li>
                                                 <li><a href="#">L</a></li>
-                                                <li><a href="#">XL</a></li>
+                                           
                                             </ul>
                                         </div>
                                     </div>
@@ -419,8 +415,10 @@
                                     </div>
                                     <div class="product-details-meta">
                                         <ul>
-                                            <li><span>Categories:</span> <a href="#">Woman,</a> <a href="#">Dress,</a> <a href="#">T-Shirt</a></li>
-                                            <li><span>Tag: </span> <a href="#">Fashion,</a> <a href="#">Mentone</a> , <a href="#">Texas</a></li>
+                                            <li><span>Type:  </span><span>Loại quạt</span> </li>
+                                            <li><span><a href="#">Detail</a></span> </li>
+
+                                         
                                         </ul>
                                     </div>
                                     <div class="pro-details-action-wrap">

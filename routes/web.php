@@ -10,11 +10,4 @@ Route::group(['prefix' => ''], function () {
     Route::get('/singleproduct/123', [ProductsController::class, 'loadsingleproduct']);
     Route::get('/aboutus', [HomeController::class, 'aboutus']);
     Route::get('/contact', [HomeController::class, 'contact']);
-
-
-
-
 });
-
-
-

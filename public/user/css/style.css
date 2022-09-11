@@ -8996,6 +8996,11 @@ textarea:focus {
 
 .single-product-wrap .product-content-wrap .product-content-left h4 a {
   color: #000000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: block;
 }
 
 .single-product-wrap .product-content-wrap .product-content-left h4 a:hover {
@@ -17859,9 +17864,9 @@ textarea:focus {
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
+  -webkit-justify-content: flex-end;
       -ms-flex-pack: justify;
-          justify-content: space-between;
+          justify-content: flex-end;
   margin-bottom: 30px;
   padding: 15px 24px;
 }

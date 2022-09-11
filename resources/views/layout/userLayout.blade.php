@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -42,53 +41,6 @@
         <header class="header-area transparent-bar section-padding-1">
             <div class="container-fluid">
                 <div class="header-large-device">
-                    <div class="header-top header-top-ptb-1 border-bottom-1">
-                        <div class="row">
-                            <div class="col-xl-4 col-lg-5">
-                                <div class="header-offer-wrap">
-                                    <p><i class="icon-paper-plane"></i> FREE SHIPPING world wide for all orders over <span>$199</span></p>
-                                </div>
-                            </div>
-                            <div class="col-xl-8 col-lg-7">
-                                <div class="header-top-right">
-                                    <div class="same-style-wrap">
-                                        <div class="same-style same-style-border track-order">
-                                            <a href="order-tracking.html">Track Your Order</a>
-                                        </div>
-                                        <div class="same-style same-style-border language-wrap">
-                                            <a class="language-dropdown-active" href="#">English <i class="icon-arrow-down"></i></a>
-                                            <div class="language-dropdown">
-                                                <ul>
-                                                    <li><a href="#">English</a></li>
-                                                    <li><a href="#">French</a></li>
-                                                    <li><a href="#">German</a></li>
-                                                    <li><a href="#">Spanish</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="same-style same-style-border currency-wrap">
-                                            <a class="currency-dropdown-active" href="#">US Dollar <i class="icon-arrow-down"></i></a>
-                                            <div class="currency-dropdown">
-                                                <ul>
-                                                    <li><a href="#">USD</a></li>
-                                                    <li><a href="#">EUR</a></li>
-                                                    <li><a href="#">Real</a></li>
-                                                    <li><a href="#">BDT</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="social-style-1 social-style-1-mrg">
-                                        <a href="#"><i class="icon-social-twitter"></i></a>
-                                        <a href="#"><i class="icon-social-facebook"></i></a>
-                                        <a href="#"><i class="icon-social-instagram"></i></a>
-                                        <a href="#"><i class="icon-social-youtube"></i></a>
-                                        <a href="#"><i class="icon-social-pinterest"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="header-bottom">
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2">
@@ -100,19 +52,9 @@
                                 <div class="main-menu main-menu-padding-1 main-menu-lh-1">
                                     <nav>
                                         <ul>
-                                            <li><a href="{{url('')}}">HOME </a>
-                                                <ul class="sub-menu-style">
-                                                    <li><a href="index.html">Home version 1 </a></li>
-                                                   
-                                                </ul>
-                                            </li>
-                                            <li><a href="{{url('/products')}}">PRODUCTS </a>
-                                              
-                                            </li>
-                                            <li><a href="{{url('/aboutus')}}">ABOUT US </a>
-                                              
-                                            </li>
-                                           
+                                            <li><a href="{{url('')}}">HOME </a></li>
+                                            <li><a href="{{url('/products')}}">PRODUCTS </a></li>
+                                            <li><a href="{{url('/aboutus')}}">ABOUT US </a></li>
                                             <li><a href="{{url('/contact')}}">CONTACT </a></li>
                                         </ul>
                                     </nav>
@@ -133,7 +75,7 @@
                                         </div>
                                     </div>
                                     <div class="same-style-2">
-                                        <a href="login-register.html"><i class="icon-user"></i></a>
+                                        <a href=""><i class="icon-user"></i></a>
                                     </div>
                                     <div class="same-style-2">
                                         <a href="wishlist.html"><i class="icon-heart"></i><span class="pro-count red">03</span></a>
@@ -152,9 +94,7 @@
                     <div class="row align-items-center">
                         <div class="col-5">
                             <div class="mobile-logo">
-                                <a href="index.html">
-                                    <img alt="" src="assets/images/logo/logo.png">
-                                </a>
+                                <a href="{{url('')}}"><img src="{{asset('user/images/logo/logo.png')}}" alt="logo"></a>
                             </div>
                         </div>
                         <div class="col-7">
@@ -179,7 +119,89 @@
                 </div>
             </div>
         </header>
-         @yield('content')
+        <!-- mini cart start -->
+        <div class="sidebar-cart-active">
+            <div class="sidebar-cart-all">
+                <a class="cart-close" href="#"><i class="icon_close"></i></a>
+                <div class="cart-content">
+                    <h3>Shopping Cart</h3>
+                    <ul>
+                        <li class="single-product-cart">
+                            <div class="cart-img">
+                                <a href="#"><img src="assets/images/cart/cart-1.jpg" alt=""></a>
+                            </div>
+                            <div class="cart-title">
+                                <h4><a href="#">Simple Black T-Shirt</a></h4>
+                                <span> 1 × $49.00 </span>
+                            </div>
+                            <div class="cart-delete">
+                                <a href="#">×</a>
+                            </div>
+                        </li>
+                        <li class="single-product-cart">
+                            <div class="cart-img">
+                                <a href="#"><img src="assets/images/cart/cart-2.jpg" alt=""></a>
+                            </div>
+                            <div class="cart-title">
+                                <h4><a href="#">Norda Backpack</a></h4>
+                                <span> 1 × $49.00 </span>
+                            </div>
+                            <div class="cart-delete">
+                                <a href="#">×</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="cart-total">
+                        <h4>Subtotal: <span>$170.00</span></h4>
+                    </div>
+                    <div class="cart-checkout-btn">
+                        <a class="btn-hover cart-btn-style" href="cart.html">view cart</a>
+                        <a class="no-mrg btn-hover cart-btn-style" href="checkout.html">checkout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu start -->
+        <div class="mobile-header-active mobile-header-wrapper-style">
+            <div class="clickalbe-sidebar-wrap">
+                <a class="sidebar-close"><i class="icon_close"></i></a>
+                <div class="mobile-header-content-area">
+
+                    <div class="mobile-search mobile-header-padding-border-1">
+                        <form class="search-form" action="#">
+                            <input type="text" placeholder="Search here…">
+                            <button class="button-search"><i class="icon-magnifier"></i></button>
+                        </form>
+                    </div>
+                    <div class="mobile-menu-wrap mobile-header-padding-border-2">
+                        <!-- mobile menu start -->
+                        <nav>
+                            <ul class="mobile-menu">
+                                <li><a href="{{url('')}}">Home </a></li>
+                                <li><a href="{{url('/products')}}">Products </a></li>
+                                <li><a href="{{url('/aboutus')}}">About Us </a></li>
+                                <li><a href="{{url('/contact')}}">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <!-- mobile menu end -->
+                    </div>
+                    <div class="mobile-contact-info mobile-header-padding-border-4">
+                        <ul>
+                            <li><i class="icon-phone "></i> (+028) 2910 2022</li>
+                            <li><i class="icon-envelope-open "></i> norda@fanstore.com</li>
+                            <li><i class="icon-home"></i> 123 Dien Bien Phu, Ho Chi Minh, Viet Nam</li>
+                        </ul>
+                    </div>
+                    <div class="mobile-social-icon">
+                        <a class="facebook" href="#"><i class="icon-social-facebook"></i></a>
+                        <a class="twitter" href="#"><i class="icon-social-twitter"></i></a>
+                        <a class="pinterest" href="#"><i class="icon-social-pinterest"></i></a>
+                        <a class="instagram" href="#"><i class="icon-social-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @yield('content')
         <footer class="footer-area bg-gray pb-30">
             <div class="container">
                 <div class="row">
@@ -190,11 +212,11 @@
                             </div>
                             <div class="single-contact-info">
                                 <span>Our Location</span>
-                                <p>869 General Village Apt. 645, Moorebury, USA</p>
+                                <p>123 Dien Bien Phu, Ho Chi Minh, Viet Nam</p>
                             </div>
                             <div class="single-contact-info">
                                 <span>24/7 hotline:</span>
-                                <p>(+99) 052 128 2399</p>
+                                <p>(+028) 2910 2022</p>
                             </div>
                         </div>
                     </div>
@@ -203,11 +225,11 @@
                             <div class="footer-menu">
                                 <nav>
                                     <ul>
-                                        <li><a href="{{url('')}}">home</a></li>
-                                        <li><a href="{{url('/products')}}">Shop</a></li>
-                                        <li><a href="{{url('/aboutus')}}">About us </a></li>
+                                        <li><a href="{{url('')}}">Home</a></li>
+                                        <li><a href="{{url('/products')}}">Products</a></li>
+                                        <li><a href="{{url('/aboutus')}}">About Us </a></li>
                                         <li><a href="{{url('/contact')}}">Contact</a></li>
-                                       
+
                                     </ul>
                                 </nav>
                             </div>
@@ -219,7 +241,7 @@
                                 <a href="#"><i class="social_youtube"></i></a>
                             </div>
                             <div class="copyright">
-                                <p>Copyright © 2021 HasThemes | <a href="https://hasthemes.com/">Built with <span>Norda</span> by HasThemes</a>.</p>
+                                <p>Copyright © 2022 Norda Fan Store
                             </div>
                         </div>
                     </div>
@@ -289,9 +311,9 @@
                                         <span>Color:</span>
                                         <div class="pro-details-color-content">
                                             <ul>
-                                             
+
                                                 <li><a class="white" href="#">white</a></li>
-                                            
+
                                             </ul>
                                         </div>
                                     </div>
@@ -299,11 +321,11 @@
                                         <span>Size:</span>
                                         <div class="pro-details-size-content">
                                             <ul>
-                                               
+
                                                 <li><a href="#">S</a></li>
                                                 <li><a href="#">M</a></li>
                                                 <li><a href="#">L</a></li>
-                                              
+
                                             </ul>
                                         </div>
                                     </div>
@@ -315,10 +337,10 @@
                                     </div>
                                     <div class="product-details-meta">
                                         <ul>
-                                            <li><span>Type:  </span><span>Loại quạt</span> </li>
+                                            <li><span>Type: </span><span>Loại quạt</span> </li>
                                             <li><span><a href="#">Detail</a></span> </li>
 
-                                         
+
                                         </ul>
                                     </div>
                                     <div class="pro-details-action-wrap">

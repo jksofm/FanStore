@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -10,15 +10,22 @@ class HomeController extends Controller
 
     public function index()
     {
-     return view("home/index");
+
+        $data = [
+            'products' => Product::take(8)->get()
+        ];
+        return view('home/index')->with($data);
     }
-    public function aboutus(){
+    public function aboutus()
+    {
         return view("aboutus/index");
     }
-    public function contact(){
+    public function contact()
+    {
         return view("contact/index");
     }
+    // public function getFeaturedProducts()
+    // {
 
-  
-
+    // }
 }

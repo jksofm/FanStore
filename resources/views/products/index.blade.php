@@ -206,7 +206,7 @@
                                     </ul>
                                 </div>
                             </div> -->
-                    <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
+                    <!-- <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
                         <h4 class="sidebar-widget-title">Size </h4>
                         <div class="sidebar-widget-list">
                             <ul>
@@ -231,7 +231,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
                         <h4 class="sidebar-widget-title">Color </h4>
                         <div class="sidebar-widget-list">
@@ -374,7 +374,7 @@
                                     </ul>
                                 </div>
                             </div>
-                            <div class="pro-details-size">
+                            <!-- <div class="pro-details-size">
                                 <span>Size:</span>
                                 <div class="pro-details-size-content">
                                     <ul>
@@ -385,7 +385,7 @@
 
                                     </ul>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="pro-details-quality">
                                 <span>Quantity:</span>
                                 <div class="cart-plus-minus">

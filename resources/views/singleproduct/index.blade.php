@@ -94,7 +94,7 @@
             <div class="pro-details-color-wrap mt-4">
                 <span>Type:</span>
                 <div class="pro-details-color-content">
-                    <p>{{$category[$product->categoryID]->name}}</p>
+                    <p>{{$category[$product->categoryID -1]->name}}</p>
                 </div>
             </div>
             <div class="pro-details-action-wrap">
@@ -144,7 +144,7 @@
                                     </tr>
                                     <tr>
                                         <td class="title width1">Categories</td>
-                                        <td>{{$category[$product->categoryID]->name}}</td>
+                                        <td>{{$category[$product->categoryID -1]->name}}</td>
                                     </tr>
                                     <tr>
                                         <td class="title width1">Brand </td>

@@ -199,56 +199,57 @@
                             <h2>{{count($reviews)}} Review For {{$product->name}}</h2>
                             @foreach($reviews as $review)
                             <div class="single-review">
-                                <div class="review-img">
-                                    <!-- <div class="review-img">
+                                <!-- <div class="review-img">
                                     <img src="assets/images/product-details/client-1.png" alt="">
-                                </div>
                                 </div> -->
-                                    <div class="review-content">
-                                        <div class="review-top-wrap">
-                                            <div class="review-name">
-                                                <h5><span>{{$review->nameuser}} </span> </h5>
-                                            </div>
-                                            <div class="review-rating">
-                                                @if($review->rating == 5)
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                @elseif($review->rating == 4)
-
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                @elseif($review->rating == 3)
-
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-                                                @elseif($review->rating == 2)
-
-                                                <i class="yellow icon_star"></i>
-                                                <i class="yellow icon_star"></i>
-
-                                                @elseif($review->rating == 1)
-
-                                                <i class="yellow icon_star"></i>
-                                                @endif
-                                            </div>
+                                <div class="review-content">
+                                    <div class="review-top-wrap">
+                                        <div class="review-name">
+                                            <h5><span>{{$review->nameuser}} </span> </h5>
                                         </div>
-                                        <p>{{$review->reviewContent}}</p>
+                                        <div class="review-rating">
+                                        @if($review->rating == 5)
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 4)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 3)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 2)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+
+                                        @elseif($review->rating == 1)
+
+                                            <i class="yellow icon_star"></i>
+                                        @endif
+
+
+
+                                        </div>
                                     </div>
+                                    <p>{{$review->reviewContent}}</p>
                                 </div>
-                                @endforeach
                             </div>
+                          
+                            @endforeach
                             <div class="ratting-form-wrapper">
                                 <span>Add a Review</span>
-                                <p>Your email address will not be published. Required fields are marked <span>*</span></p>
+                               
                                 <div class="ratting-form">
 
-                                    <form action="#">
+                                   
 
                                         <form method="POST" action="{{url('/review/create/'.$product->id)}}">
                                             @csrf
@@ -259,39 +260,10 @@
                                                         <input name="nameuser" type="text">
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-6 col-md-6">
-                                                    <div class="rating-form-style mb-20">
-                                                        <label>Email <span>*</span></label>
-                                                        <input type="email">
-                                                    </div>
-                                                </div>
+                                              
                                                 <div class="col-lg-12">
                                                     <div class="star-box-wrap">
-                                                        <div class="single-ratting-star">
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                        </div>
-                                                        <div class="single-ratting-star">
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                        </div>
-                                                        <div class="single-ratting-star">
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                        </div>
-                                                        <div class="single-ratting-star">
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                        </div>
-                                                        <div class="single-ratting-star">
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                            <a href="#"><i class="icon_star"></i></a>
-                                                        </div>
+                                                      
                                                         <label>Rating <span>(1-5)</span></label>
                                                         <input name="rating" max="5" min="1" type="number">
                                                     </div>
@@ -310,7 +282,7 @@
                                                 </div>
                                             </div>
                                         </form>
-                                    </form>
+                                  
                                 </div>
                             </div>
                         </div>

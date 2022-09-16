@@ -38,6 +38,9 @@ class ProductsController extends Controller
         $data = [
             'product' => Product::find($productId),
             'reviews' => Review::where('productID', $productId)->get(),
+            'category' => Category::get(),
+
+            'imagesGallery' => ImagesGallery::where('productID', $productId)->get(),
         ];
         return view("singleproduct/index")->with($data);
     }

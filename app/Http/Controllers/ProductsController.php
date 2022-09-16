@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -16,10 +17,17 @@ class ProductsController extends Controller
         return view('products/index')->with($data);
     }
 
-    public function loadsingleproduct()
-    {
-        return view("singleproduct/index");
+    public function loadsingleproduct($productid)
+           
+    {  
+        $data = [
+        'product' => Product::find($productid),
+        'reviews' => Review::where('productID',$productid)->get(),
+    ];
+        return view("singleproduct/index")->with($data);
     }
+
+
 
     // public function getAllProducts()
     // {
@@ -28,6 +36,20 @@ class ProductsController extends Controller
     //     ];
     //     return view('products/index')->with($data);
     // }
+
+    public function createreview(Request $request,$productId)
+    
+    {  
+        $data = $request->post();
+        $data['productID'] = $productId;
+        Review::create($data);
+        $data = [
+            'product' => Product::find($productId),
+            'reviews' => Review::where('productID',$productId)->get(),
+        ];
+       
+        return view("singleproduct/index")->with($data);
+    }
 
 
 

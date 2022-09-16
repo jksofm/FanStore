@@ -141,7 +141,7 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="single-product-wrap mb-35">
                             <div class="product-img product-img-zoom mb-20">
-                                <a href="product-details.html">
+                                <a href="{{url('/singleproduct/'.$product->id)}}">
                                     <img src="{{asset('user/images/fans/'.$product->photo)}}" alt="">
                                 </a>
                                 <div class="product-action-wrap">
@@ -156,7 +156,7 @@
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-content-left">
-                                    <h4><a href="product-details.html">{{$product->name}}</a></h4>
+                                    <h4><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h4>
                                     <div class="product-price">
                                         <span>${{$product->price}}</span>
                                     </div>

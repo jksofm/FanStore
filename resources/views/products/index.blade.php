@@ -103,7 +103,7 @@
                                                         </div>
                                                         <span>(2)</span>
                                                     </div> -->
-                                            <h3><a href="product-details.html">{{$product->name}}</a></h3>
+                                            <h3><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <div class="product-price-2">
                                                 <span>${{$product->price}}</span>
                                             </div>

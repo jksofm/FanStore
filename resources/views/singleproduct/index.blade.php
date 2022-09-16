@@ -125,7 +125,7 @@
             </div>
             <div class="col-lg-6 col-md-6">
                 <div class="product-details-content pro-details-content-mrg">
-                    <h2>Tên quạt</h2>
+                    <h2>{{$product->name}}</h2>
                     <!-- <div class="product-ratting-review-wrap">
                                 <div class="product-ratting-digit-wrap">
                                     <div class="product-ratting">
@@ -146,7 +146,7 @@
                             </div> -->
                     <p>Mô tả</p>
                     <div class="pro-details-price">
-                        <span class="new-price">$75.72</span>
+                        <span class="new-price">{{$product->price}}</span>
                         <!-- <span class="old-price">$95.72</span> -->
                     </div>
                     <div class="pro-details-color-wrap">
@@ -154,7 +154,7 @@
                         <div class="pro-details-color-content">
                             <ul>
 
-                                <li><a class="white" href="#">white</a></li>
+                                <li><a class="white" href="#">{{$product->color}}</a></li>
 
                             </ul>
                         </div>
@@ -278,84 +278,85 @@
                     </div>
                     <div id="des-details4" class="tab-pane">
                         <div class="review-wrapper">
-                            <h2>1 review for Sleeve Button Cowl Neck</h2>
+                            <h2>{{count($reviews)}} review for {{$product->name}}</h2>
+                            @foreach($reviews as $review)
                             <div class="single-review">
-                                <div class="review-img">
+                                <!-- <div class="review-img">
                                     <img src="assets/images/product-details/client-1.png" alt="">
-                                </div>
+                                </div> -->
                                 <div class="review-content">
                                     <div class="review-top-wrap">
                                         <div class="review-name">
-                                            <h5><span>John Snow</span> - March 14, 2019</h5>
+                                            <h5><span>{{$review->nameuser}} </span> </h5>
                                         </div>
                                         <div class="review-rating">
+                                        @if($review->rating == 5)
                                             <i class="yellow icon_star"></i>
                                             <i class="yellow icon_star"></i>
                                             <i class="yellow icon_star"></i>
                                             <i class="yellow icon_star"></i>
                                             <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 4)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 3)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        @elseif($review->rating == 2)
+
+                                            <i class="yellow icon_star"></i>
+                                            <i class="yellow icon_star"></i>
+                                        
+                                        @elseif($review->rating == 1)
+
+                                            <i class="yellow icon_star"></i>
+                                        @endif
+                                           
+                                          
+                                           
                                         </div>
                                     </div>
-                                    <p>Donec accumsan auctor iaculis. Sed suscipit arcu ligula, at egestas magna molestie a. Proin ac ex maximus, ultrices justo eget, sodales orci. Aliquam egestas libero ac turpis pharetra, in vehicula lacus scelerisque</p>
+                                    <p>{{$review->reviewContent}}</p>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
                         <div class="ratting-form-wrapper">
                             <span>Add a Review</span>
                             <p>Your email address will not be published. Required fields are marked <span>*</span></p>
                             <div class="ratting-form">
-                                <form action="#">
+                                <form method="POST" action="{{url('/review/create/'.$product->id)}}">
+                                    @csrf
+
                                     <div class="row">
                                         <div class="col-lg-6 col-md-6">
                                             <div class="rating-form-style mb-20">
                                                 <label>Name <span>*</span></label>
-                                                <input type="text">
+                                                <input name="nameuser" type="text">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-md-6">
                                             <div class="rating-form-style mb-20">
-                                                <label>Email <span>*</span></label>
-                                                <input type="email">
+                                                <label>Rating <span>(1-5)</span></label>
+                                                <input name="rating" max="5" min="1" type="number">
                                             </div>
                                         </div>
-                                        <div class="col-lg-12">
-                                            <div class="star-box-wrap">
-                                                <div class="single-ratting-star">
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                </div>
-                                                <div class="single-ratting-star">
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                </div>
-                                                <div class="single-ratting-star">
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                </div>
-                                                <div class="single-ratting-star">
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                </div>
-                                                <div class="single-ratting-star">
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                    <a href="#"><i class="icon_star"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                     
                                         <div class="col-md-12">
                                             <div class="rating-form-style mb-20">
                                                 <label>Your review <span>*</span></label>
-                                                <textarea name="Your Review"></textarea>
+                                                <textarea name="reviewContent"></textarea>
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
                                             <div class="form-submit">
-                                                <input type="submit" value="Submit">
+                                                <input type="submit" value="Save">
                                             </div>
                                         </div>
                                     </div>

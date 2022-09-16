@@ -233,7 +233,7 @@
                         </div>
                     </div> -->
                     <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
-                        <h4 class="sidebar-widget-title">Color </h4>
+                        <h4 class="sidebar-widget-title">Color 1</h4>
                         <div class="sidebar-widget-list">
                             <ul>
                                 <li>

@@ -49,6 +49,9 @@ session_start();
                                 <div class="logo">
                                     <a href="{{url('')}}"><img src="{{asset('user/images/logo/logo.png')}}" alt="logo"></a>
                                 </div>
+                                <div>
+                                <div class="website-counter"></div>
+                                </div>
                             </div>
                             <div class="col-xl-8 col-lg-7">
                                 <div class="main-menu main-menu-padding-1 main-menu-lh-1">
@@ -80,11 +83,14 @@ session_start();
                                         <a href=""><i class="icon-user"></i></a>
                                     </div>
                                     <div class="same-style-2">
-                                        <a href="wishlist.html"><i class="icon-heart"></i><span class="pro-count red">03</span></a>
+                                        <a href="wishlist.html"><i class="icon-heart"></i>
+                                        <!-- <span class="pro-count red">03</span> -->
+                                    </a>
                                     </div>
                                     <div class="same-style-2 header-cart">
                                         <a class="cart-active" href="#">
-                                            <i class="icon-basket-loaded"></i><span class="pro-count red">02</span>
+                                            <i class="icon-basket-loaded"></i>
+                                            <!-- <span class="pro-count red">02</span> -->
                                         </a>
                                     </div>
                                 </div>
@@ -362,7 +368,51 @@ session_start();
             </div>
         </div>
         <!-- Modal end -->
+        <div class="ticker">
+         <div class="ticker__list">
+            <div class="ticker__item">
+               
+                <h2 id="displayDateTime"></h2>
+            </div>
+         </div>
+        </div>
     </div>
+<!-- Scrolling -->
+    <script type="text/javascript">
+  var today = new Date();
+  var day = today.getDay();
+  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes()
+  var dateTime = date+' '+time;
+   
+  document.getElementById("displayDateTime").innerHTML =  dateTime + " " + daylist[day]  ;
+ 
+  </script>
+
+  <!-- Visitor count -->
+  <script type="text/javascript">
+ var counterContainer = document.querySelector(".website-counter");
+var resetButton = document.querySelector("#reset");
+var visitCount = localStorage.getItem("page_view");
+
+// Check if page_view entry is present
+if (visitCount) {
+  visitCount = Number(visitCount) + 1;
+  localStorage.setItem("page_view", visitCount);
+} else {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+}
+counterContainer.innerHTML =  "Visitor count : " + visitCount;
+
+// Adding onClick event listener
+resetButton.addEventListener("click", () => {
+  visitCount = 1;
+  localStorage.setItem("page_view", 1);
+  counterContainer.innerHTML = "Visitor count : " + visitCount;
+});
+  </script>
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

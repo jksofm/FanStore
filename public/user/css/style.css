@@ -161,6 +161,68 @@ ul {
   margin: 0;
   padding: 0;
 }
+/* Scolling */
+.ticker{
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  z-index: 99;
+  display : flex
+}
+
+
+
+.ticker__list{
+
+  display : flex;
+  margin-top : 20px;
+  animation : ticker 9s infinite linear;
+}
+
+  .ticker:hover .ticker__list{
+
+    animation-play-state : paused
+  }
+  
+.ticker__item{
+ /* background-color: violet; */
+  margin-right : 20px
+}
+#displayDateTime{
+ font-size: 20px;
+}
+  
+@keyframes ticker{
+  from {
+
+    transform : translateX(0)
+  }to{
+    transform : translateX(-100vw)
+
+  }
+
+
+}
+/* Counter visitor */
+.website-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.website-counter {
+  background-color: #b1aeae;
+  height: 30px;
+  width: 100px;
+  color: white;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 12px;
+  margin-top: 10px;
+ 
+}
+
+
 
 /*-- 
     - Common Classes

@@ -1,9 +1,27 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+
+        $(".btnQuickView").click(() => {
+            var productQuickView = $('.btnQuickView').val();
+            console.log(productQuickView);
+            $.ajax({
+                type: "GET",
+                data: {
+                    productQuickView
+                },
+                url: "{{url('/getQuickViewProduct')}}",
+                success: (data) => {
+                    $('#result2').html(data.msg)
+                }
+            })
+        })
+
+    })
+</script>
 @extends('layout.userLayout')
 
 @section('content')
-
-
-
 <div class="slider-area bg-gray">
     <div class="hero-slider-active-1 hero-slider-pt-1 nav-style-1 dot-style-1">
         <div class="single-hero-slider single-animation-wrap">
@@ -135,13 +153,13 @@
     </div>
     <div class="container">
         <div class="tab-content jump">
-            <div id="product-1" class="tab-pane active">
+            <div id="" class="tab-pane active">
                 <div class="row">
                     @foreach($products as $product)
                     <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12">
                         <div class="single-product-wrap mb-35">
                             <div class="product-img product-img-zoom mb-20">
-                                <a href="product-details.html">
+                                <a href="{{url('/singleproduct/'.$product->id)}}">
                                     <img src="{{asset('user/images/fans/'.$product->photo)}}" alt="">
                                 </a>
                                 <div class="product-action-wrap">
@@ -149,14 +167,13 @@
                                         <button><i class="icon-basket-loaded"></i>Add to Cart</button>
                                     </div>
                                     <div class="product-action-right tooltip-style">
-                                        <button data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
-
+                                        <button data-toggle="modal" data-target="#exampleModal" class="btnQuickView" value="{{$product->id}}"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
                                     </div>
                                 </div>
                             </div>
                             <div class="product-content-wrap">
                                 <div class="product-content-left">
-                                    <h4><a href="product-details.html">{{$product->name}}</a></h4>
+                                    <h4><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h4>
                                     <div class="product-price">
                                         <span>${{$product->price}}</span>
                                     </div>
@@ -168,8 +185,6 @@
                         </div>
                     </div>
                     @endforeach
-
-
                 </div>
             </div>
         </div>

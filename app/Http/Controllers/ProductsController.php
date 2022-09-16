@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\ImagesGallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -16,19 +18,13 @@ class ProductsController extends Controller
         return view('products/index')->with($data);
     }
 
-    public function loadsingleproduct()
+    public function loadsingleproduct($id)
     {
-        return view("singleproduct/index");
+        $data = [
+            'product' => Product::find($id),
+            'imagesGallery' => ImagesGallery::where('productID', $id)->get(),
+            'category' => Category::get(),
+        ];
+        return view("singleproduct/index")->with($data);
     }
-
-    // public function getAllProducts()
-    // {
-    //     $data = [
-    //         'products' => Product::get()
-    //     ];
-    //     return view('products/index')->with($data);
-    // }
-
-
-
 }

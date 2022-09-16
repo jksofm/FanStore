@@ -10,9 +10,8 @@ class HomeController extends Controller
 
     public function index()
     {
-
         $data = [
-            'products' => Product::take(8)->get()
+            'products' => Product::where('featured', true)->take(8)->get()
         ];
         return view('home/index')->with($data);
     }
@@ -24,8 +23,4 @@ class HomeController extends Controller
     {
         return view("contact/index");
     }
-    // public function getFeaturedProducts()
-    // {
-
-    // }
 }

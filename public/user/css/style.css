@@ -16565,6 +16565,10 @@ textarea:focus {
   width: 120px;
 }
 
+.pro-details-color-content p {
+  text-transform: capitalize;
+}
+
 .pro-details-color-content ul {
   display: -webkit-box;
   display: -webkit-flex;
@@ -16613,6 +16617,22 @@ textarea:focus {
 
 .pro-details-color-content ul li a.white {
   background-color: #fff;
+}
+
+.pro-details-color-content ul li a.black {
+  background-color: #000;
+}
+
+.pro-details-color-content ul li a.blue {
+  background-color: #9eb7d8;
+}
+
+.pro-details-color-content ul li a.gray {
+  background-color: #d5d5d5;
+}
+
+.pro-details-color-content ul li a.wood {
+  background-color: #42291A;
 }
 
 .pro-details-color-content ul li a.azalea {
@@ -17053,6 +17073,7 @@ textarea:focus {
   font-size: 14px;
   color: #000000;
   padding: 17px 30px;
+  text-transform:capitalize;
 }
 
 .dec-review-bottom .specification-wrap table tbody tr td.title {
@@ -17080,17 +17101,20 @@ textarea:focus {
 
 .dec-review-bottom .specification-wrap table tbody tr td.width1 {
   width: 300px;
+  text-transform: capitalize;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .dec-review-bottom .specification-wrap table tbody tr td.width1 {
     width: 200px;
+
   }
 }
 
 @media only screen and (max-width: 767px) {
   .dec-review-bottom .specification-wrap table tbody tr td.width1 {
     width: 100px;
+
   }
 }
 

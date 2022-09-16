@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -11,8 +14,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('user/images/favicon.png')}}">
 
-    <!-- All CSS is here
-	============================================ -->
+    <!-- All CSS is here ============================================ -->
 
     <link rel="stylesheet" href="{{asset('user/css/vendor/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('user/css/vendor/signericafat.css')}}">
@@ -305,15 +307,12 @@
                                     <p>Mô tả ngắn</p>
                                     <div class="pro-details-price">
                                         <span class="new-price">$75.72</span>
-                                        <!-- <span class="old-price">$95.72</span> -->
                                     </div>
                                     <div class="pro-details-color-wrap">
                                         <span>Color:</span>
                                         <div class="pro-details-color-content">
                                             <ul>
-
                                                 <li><a class="white" href="#">white</a></li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -321,11 +320,9 @@
                                         <span>Size:</span>
                                         <div class="pro-details-size-content">
                                             <ul>
-
                                                 <li><a href="#">S</a></li>
                                                 <li><a href="#">M</a></li>
                                                 <li><a href="#">L</a></li>
-
                                             </ul>
                                         </div>
                                     </div>
@@ -339,8 +336,6 @@
                                         <ul>
                                             <li><span>Type: </span><span>Loại quạt</span> </li>
                                             <li><span><a href="#">Detail</a></span> </li>
-
-
                                         </ul>
                                     </div>
                                     <div class="pro-details-action-wrap">
@@ -369,8 +364,10 @@
         <!-- Modal end -->
     </div>
 
-    <!-- All JS is here
-============================================ -->
+    <!-- Jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- All JS is here ======================================================== -->
 
     <script src="{{asset('user/js/vendor/modernizr-3.11.7.min.js')}}"></script>
     <script src="{{asset('user/js/vendor/jquery-v3.6.0.min.js')}}"></script>
@@ -390,8 +387,9 @@
     <script src="{{asset('user/js/plugins/ajax-mail.js')}}"></script>
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above  
-<script src="{{asset('user/js/vendor/vendor.min.js')}}"></script>
-<script src="{{asset('user/js/plugins/plugins.min.js')}}"></script>  -->
+        <script src="{{asset('user/js/vendor/vendor.min.js')}}"></script>
+        <script src="{{asset('user/js/plugins/plugins.min.js')}}"></script>  -->
+
     <!-- Main JS -->
     <script src="{{asset('user/js/main.js')}}"></script>
 

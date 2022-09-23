@@ -17,16 +17,19 @@ class SearchController extends Controller
     {
         if ($request->get('query')) {
             $query = $request->get('query');
-            $data = DB::table('product')
-                ->where('name_product', 'LIKE', "%{$query}%")
-                ->get();
+            return response()->json([
+                'product' => Product::where('name', 'LIKE', "%{$query}%")->get()
+            ]);
+
             $output = '<ul class="dropdown-menu" style="display:block; position:relative">';
+
+            $data = DB::tabke('product');
             foreach ($data as $row) {
                 $output .= '
-                <li><a href="data/' . $row->id . '">' . $row->name_product . '</a></li>';
+                <li><a href="data/' . $row->id . '">' . $row->name . '</a></li>';
             }
             $output .= '</ul>';
             echo $output;
         }
-    }  
+    }
 }

@@ -3,11 +3,10 @@
 <script>
     $(document).ready(function() {
 
-        $('#textboxName').keyup(function() { 
-            var query = $(this).val(); 
-            if (query != '') 
-            {
-                var _token = $('input[name="_token"]').val(); 
+        $('#textboxName').keyup(function() {
+            var query = $(this).val();
+            if (query != '') {
+                var _token = $('input[name="_token"]').val();
                 $.ajax({
                     url: "{{url('/products/getSearchAjax)}}",
                     type: "GET",
@@ -15,9 +14,9 @@
                         query: query,
                         _token: _token
                     },
-                    success: function(data) { 
-                        $('#textboxName').fadeIn();
-                        $('#textboxName').html(data);
+                    success: function(data) {
+                        $('#shop-1').fadeIn();
+                        $('#shop-1').html(data);
                     }
                 });
             }
@@ -25,7 +24,7 @@
 
         $(document).on('click', 'li', function() {
             $('#textboxName').val($(this).text());
-            $('#textboxName').fadeOut();
+            $('#shop-1').fadeOut();
         });
 
     });

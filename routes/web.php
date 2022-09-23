@@ -17,5 +17,5 @@ Route::group(['prefix' => ''], function () {
 
 Route::group(['prefix' => '/products'], function () {
     Route::get('/getsearch', [SearchController::class, 'getsearch']);
-    Route::post('/getsearchajax', [SearchController::class, 'getsearchajax'])->name('search');
+    Route::post('/getsearchajax', [SearchController::class, 'getsearchajax'])->name('getsearchajax');
 });

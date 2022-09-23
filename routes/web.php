@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => ''], function () {
@@ -11,4 +12,10 @@ Route::group(['prefix' => ''], function () {
     Route::get('/aboutus', [HomeController::class, 'aboutus']);
     Route::get('/contact', [HomeController::class, 'contact']);
     Route::post('/review/create/{productId}', [ProductsController::class, 'createreview']);
+    
+});
+
+Route::group(['prefix' => '/products'], function () {
+    Route::get('/getsearch', [SearchController::class, 'getsearch']);
+    Route::post('/getsearchajax', [SearchController::class, 'getsearchajax'])->name('search');
 });

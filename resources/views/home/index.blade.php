@@ -19,7 +19,7 @@
             success: (data) => {
                 $('#productQuickViewName').html(data.productName),
                     $('#productQuickViewPrice').html(data.productPrice),
-                    $('#productQuickViewPhoto').attr('src', data.productPhoto)
+                    $('#productQuickViewPhoto').attr('src', `{{asset('user/images/fans/${data.productPhoto}')}}`)
                 $('#productQuickViewColor').attr('class', data.productColor)
             }
         })

@@ -54,7 +54,7 @@ class ProductsController extends Controller
         return response()->json([
             "productName" => $productName,
             "productPrice" => "$" . $productPrice,
-            "productPhoto" => "http://localhost:8000/user/images/fans/" . $productPhoto . "",
+            "productPhoto" => $productPhoto ,
             "productColor" => $productColor,
         ]);
     }

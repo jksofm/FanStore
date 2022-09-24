@@ -1,3 +1,5 @@
+
+
 @extends('layout.userLayout')
 
 
@@ -77,8 +79,8 @@
                 </div>
                 <div class="shop-bottom-area">
                     <div class="tab-content jump">
-                        <div id="shop-1" class="tab-pane active">
-                            <div class="row">
+                        <div  class="tab-pane active">
+                            <div id="productcontent" class="row">
                                 @foreach($products as $product)
 
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
@@ -93,32 +95,14 @@
                                             </div>
                                         </div>
                                         <div class="product-content-wrap-2 text-center">
-                                            <!-- <div class="product-rating-wrap">
-                                                        <div class="product-rating">
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>   
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star gray"></i>
-                                                        </div>
-                                                        <span>(2)</span>
-                                                    </div> -->
+                                          
                                             <h3><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <div class="product-price-2">
                                                 <span>${{$product->price}}</span>
                                             </div>
                                         </div>
                                         <div class="product-content-wrap-2 product-content-position text-center">
-                                            <!-- <div class="product-rating-wrap">
-                                                        <div class="product-rating">
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star"></i>
-                                                            <i class="icon_star gray"></i>
-                                                        </div>
-                                                        <span>(2)</span>
-                                                    </div> -->
+                                         
                                             <h3><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <div class="product-price-2">
                                                 <span>${{$product->price}}</span>
@@ -150,20 +134,20 @@
                     <div class="sidebar-widget mb-40">
                         <h4 class="sidebar-widget-title">Search </h4>
                         <div class="sidebar-search">
-                            <form class="sidebar-search-form" action="#">
-                                <input type="text" placeholder="Search here...">
+                            <div class="sidebar-search-form">
+                                <input id="textboxName" type="text" placeholder="Search here...">
                                 <button>
                                     <i class="icon-magnifier"></i>
                                 </button>
-                            </form>
+                            </div>
                         </div>
                     </div>
                     <div class="sidebar-widget shop-sidebar-border mb-35 pt-40">
-                        <h4 class="sidebar-widget-title">Type </h4>
+                        <h4 class="sidebar-widget-title">Category</h4>
                         <div class="shop-catigory">
                             <ul>
-                                <li><a href="shop.html">Fan Type</a></li>
-                                <li><a href="shop.html">Fan TYpe</a></li>
+                                <li><a href="shop.html">Category 1</a></li>
+                                <li><a href="shop.html">Category 2</a></li>
 
                             </ul>
                         </div>
@@ -181,59 +165,9 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
-                                <h4 class="sidebar-widget-title">Refine By </h4>
-                                <div class="sidebar-widget-list">
-                                    <ul>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox"> <a href="#">On Sale <span>4</span> </a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">New <span>5</span></a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar-widget-list-left">
-                                                <input type="checkbox" value=""> <a href="#">In Stock <span>6</span> </a>
-                                                <span class="checkmark"></span>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div> -->
-                    <!-- <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
-                        <h4 class="sidebar-widget-title">Size </h4>
-                        <div class="sidebar-widget-list">
-                            <ul>
-
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">M <span>5</span> </a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">S <span>6</span> </a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="sidebar-widget-list-left">
-                                        <input type="checkbox" value=""> <a href="#">L <span>7</span> </a>
-                                        <span class="checkmark"></span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div> -->
+                 
                     <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
-                        <h4 class="sidebar-widget-title">Color 1</h4>
+                        <h4 class="sidebar-widget-title">Color</h4>
                         <div class="sidebar-widget-list">
                             <ul>
                                 <li>
@@ -263,16 +197,7 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- <div class="sidebar-widget shop-sidebar-border pt-40">
-                                <h4 class="sidebar-widget-title">Popular Tags</h4>
-                                <div class="tag-wrap sidebar-widget-tag">
-                                    <a href="#">Clothing</a>
-                                    <a href="#">Accessories</a>
-                                    <a href="#">For Men</a>
-                                    <a href="#">Women</a>
-                                    <a href="#">Fashion</a>
-                                </div>
-                            </div> -->
+                   
                 </div>
             </div>
         </div>
@@ -306,3 +231,72 @@
     </div>
 </div>
 @endsection
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+<script>
+    $(document).ready(function() {
+
+        $('#textboxName').keyup(function() {
+            var query = $(this).val();
+           
+           
+              
+               $.ajax({
+                type: 'GET',
+                url: "{{url('/filter/getsearchajax')}}",
+                data: {
+                    query
+                },
+                success: function(data){
+                   
+                    if(data.products.length>0){
+                     
+                        var n = data.products.length;
+                        var s = '';
+                     for(var i=0; i<n; i++) {
+                            s+= `
+                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                    <div class="single-product-wrap mb-35">
+                                        <div class="product-img product-img-zoom mb-15">
+                                            <a href="{{url('/singleproduct/${data.products[i].id}')}}">
+                                                <img src="{{asset('user/images/fans/${data.products[i].photo}')}}" alt="">
+                                            </a>
+                                            <div class="product-action-2 tooltip-style-2">
+                                                <button title="Wishlist"><i class="icon-heart"></i></button>
+                                                <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-wrap-2 text-center">
+                                          
+                                            <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
+                                            <div class="product-price-2">
+                                                <span>${data.products[i].price}</span>
+                                            </div>
+                                        </div>
+                                        <div class="product-content-wrap-2 product-content-position text-center">
+                                         
+                                            <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
+                                            <div class="product-price-2">
+                                                <span>${data.products[i].price}</span>
+                                            </div>
+                                            <div class="pro-add-to-cart">
+                                                <button title="Add to Cart">Add To Cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `
+                        }
+                        $('#productcontent').html(s);
+                    }
+                }
+               });
+            
+        });
+
+       
+
+    });
+</script>

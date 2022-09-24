@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
-
+    
 </head>
 
 <body>
@@ -416,12 +416,16 @@
     <script src="{{asset('user/js/plugins/scrollup.js')}}"></script>
     <script src="{{asset('user/js/plugins/ajax-mail.js')}}"></script>
 
+  
+
     <!-- Use the minified version files listed below for better performance and remove the files listed above  
         <script src="{{asset('user/js/vendor/vendor.min.js')}}"></script>
         <script src="{{asset('user/js/plugins/plugins.min.js')}}"></script>  -->
 
     <!-- Main JS -->
     <script src="{{asset('user/js/main.js')}}"></script>
+
+
 
 </body>
 

@@ -1,23 +1,29 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    $(document).ready(function() {
+    function showDetails(animal) {
+        var productName = animal.getAttribute("data-name");
+        var productPrice = animal.getAttribute("data-price");
+        var productPhoto = animal.getAttribute("data-photo");
+        var productColor = animal.getAttribute("data-color");
+        // alert("The " + animal.innerHTML + " is a " + productPrice + ".");
 
-        $(".btnQuickView").click(() => {
-            var productQuickView = $('.btnQuickView').val();
-            console.log(productQuickView);
-            $.ajax({
-                type: "GET",
-                data: {
-                    productQuickView
-                },
-                url: "{{url('/getQuickViewProduct')}}",
-                success: (data) => {
-                    $('#result2').html(data.msg)
-                }
-            })
+
+        $.ajax({
+            type: "GET",
+            data: {
+                productName,
+                productPrice,
+                productPhoto,
+                productColor
+            },
+            url: "{{url('/getProductQuickView')}}",
+            success: (data) => {
+                $('#productQuickViewName').html(data.productName),
+                    $('#productQuickViewPrice').html(data.productPrice),
+                    $('#productQuickViewPhoto').attr('src', data.productPhoto)
+                $('#productQuickViewColor').attr('class', data.productColor)
+            }
         })
-
-    })
+    }
 </script>
 @extends('layout.userLayout')
 
@@ -167,7 +173,7 @@
                                         <button><i class="icon-basket-loaded"></i>Add to Cart</button>
                                     </div>
                                     <div class="product-action-right tooltip-style">
-                                        <button data-toggle="modal" data-target="#exampleModal" class="btnQuickView" value="{{$product->id}}"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
+                                        <button onclick="showDetails(this)" id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-photo="{{$product->photo}}" data-color="{{$product->color}}" data-toggle="modal" data-target="#exampleModal" class="btnQuickView"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
                                     </div>
                                 </div>
                             </div>

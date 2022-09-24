@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!doctype html>
 <html class="no-js" lang="en">
 
@@ -50,7 +47,7 @@ session_start();
                                     <a href="{{url('')}}"><img src="{{asset('user/images/logo/logo.png')}}" alt="logo"></a>
                                 </div>
                                 <div>
-                                <div class="website-counter"></div>
+                                    <div class="website-counter"></div>
                                 </div>
                             </div>
                             <div class="col-xl-8 col-lg-7">
@@ -84,8 +81,8 @@ session_start();
                                     </div>
                                     <div class="same-style-2">
                                         <a href="wishlist.html"><i class="icon-heart"></i>
-                                        <!-- <span class="pro-count red">03</span> -->
-                                    </a>
+                                            <!-- <span class="pro-count red">03</span> -->
+                                        </a>
                                     </div>
                                     <div class="same-style-2 header-cart">
                                         <a class="cart-active" href="#">
@@ -268,30 +265,15 @@ session_start();
                             <div class="col-lg-5 col-md-6 col-12 col-sm-12">
                                 <div class="tab-content quickview-big-img">
                                     <div id="pro-1" class="tab-pane fade show active">
-                                        <img src="{{asset('user/images/product/product-1.jpg')}}" alt="">
+                                        <img id="productQuickViewPhoto" src="" alt="">
                                     </div>
-                                    <div id="pro-2" class="tab-pane fade">
-                                        <img src="{{asset('user/images/product/product-3.jpg')}}" alt="">
-                                    </div>
-                                    <div id="pro-3" class="tab-pane fade">
-                                        <img src="{{asset('user/images/product/product-6.jpg')}}" alt="">
-                                    </div>
-                                    <div id="pro-4" class="tab-pane fade">
-                                        <img src="{{asset('user/images/product/product-3.jpg')}}" alt="">
-                                    </div>
+
                                 </div>
-                                <div class="quickview-wrap mt-15">
-                                    <div class="quickview-slide-active nav-style-6">
-                                        <a class="active" data-toggle="tab" href="#pro-1"><img src="{{asset('user/images/product/quickview-s1.jpg')}}" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-2"><img src="{{asset('user/images/product/quickview-s2.jpg')}}" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-3"><img src="{{asset('user/images/product/quickview-s3.jpg')}}" alt=""></a>
-                                        <a data-toggle="tab" href="#pro-4"><img src="{{asset('user/images/product/quickview-s2.jpg')}}" alt=""></a>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col-lg-7 col-md-6 col-12 col-sm-12">
                                 <div class="product-details-content quickview-content">
-                                    <h2>Tên quạt</h2>
+                                    <h2 id="productQuickViewName">Tên quạt</h2>
                                     <!-- <div class="product-ratting-review-wrap">
                                         <div class="product-ratting-digit-wrap">
                                             <div class="product-ratting">
@@ -310,15 +292,15 @@ session_start();
                                             <span>242 orders</span>
                                         </div>
                                     </div> -->
-                                    <p>Mô tả ngắn</p>
+                                    <p>Description</p>
                                     <div class="pro-details-price">
-                                        <span class="new-price">$75.72</span>
+                                        <span class="new-price" id="productQuickViewPrice">$75.72</span>
                                     </div>
                                     <div class="pro-details-color-wrap">
                                         <span>Color:</span>
                                         <div class="pro-details-color-content">
                                             <ul>
-                                                <li><a class="white" href="#">white</a></li>
+                                                <li><a id="productQuickViewColor" class="white" href="#">white</a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -369,50 +351,48 @@ session_start();
         </div>
         <!-- Modal end -->
         <div class="ticker">
-         <div class="ticker__list">
-            <div class="ticker__item">
-               
-                <h2 id="displayDateTime"></h2>
+            <div class="ticker__list">
+                <div class="ticker__item">
+                    <!-- <h2 id="displayDateTime"></h2> -->
+                </div>
             </div>
-         </div>
         </div>
     </div>
-<!-- Scrolling -->
+    <!-- Scrolling -->
     <script type="text/javascript">
-  var today = new Date();
-  var day = today.getDay();
-  var daylist = ["Sunday","Monday","Tuesday","Wednesday ","Thursday","Friday","Saturday"];
-  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-  var time = today.getHours() + ":" + today.getMinutes()
-  var dateTime = date+' '+time;
-   
-  document.getElementById("displayDateTime").innerHTML =  dateTime + " " + daylist[day]  ;
- 
-  </script>
+        var today = new Date();
+        var day = today.getDay();
+        var daylist = ["Sunday", "Monday", "Tuesday", "Wednesday ", "Thursday", "Friday", "Saturday"];
+        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var time = today.getHours() + ":" + today.getMinutes()
+        var dateTime = date + ' ' + time;
 
-  <!-- Visitor count -->
-  <script type="text/javascript">
- var counterContainer = document.querySelector(".website-counter");
-var resetButton = document.querySelector("#reset");
-var visitCount = localStorage.getItem("page_view");
+        document.getElementById("displayDateTime").innerHTML = dateTime + " " + daylist[day];
+    </script>
 
-// Check if page_view entry is present
-if (visitCount) {
-  visitCount = Number(visitCount) + 1;
-  localStorage.setItem("page_view", visitCount);
-} else {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
-}
-counterContainer.innerHTML =  "Visitor count : " + visitCount;
+    <!-- Visitor count -->
+    <script type="text/javascript">
+        var counterContainer = document.querySelector(".website-counter");
+        var resetButton = document.querySelector("#reset");
+        var visitCount = localStorage.getItem("page_view");
 
-// Adding onClick event listener
-resetButton.addEventListener("click", () => {
-  visitCount = 1;
-  localStorage.setItem("page_view", 1);
-  counterContainer.innerHTML = "Visitor count : " + visitCount;
-});
-  </script>
+        // Check if page_view entry is present
+        if (visitCount) {
+            visitCount = Number(visitCount) + 1;
+            localStorage.setItem("page_view", visitCount);
+        } else {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+        }
+        counterContainer.innerHTML = "Visitor count : " + visitCount;
+
+        // Adding onClick event listener
+        resetButton.addEventListener("click", () => {
+            visitCount = 1;
+            localStorage.setItem("page_view", 1);
+            counterContainer.innerHTML = "Visitor count : " + visitCount;
+        });
+    </script>
 
     <!-- Jquery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

@@ -44,4 +44,18 @@ class ProductsController extends Controller
         ];
         return view("singleproduct/index")->with($data);
     }
+
+    public function getProductQuickView(Request $request)
+    {
+        $productName = $request->get('productName');
+        $productPrice = $request->get('productPrice');
+        $productPhoto = $request->get('productPhoto');
+        $productColor = $request->get('productColor');
+        return response()->json([
+            "productName" => $productName,
+            "productPrice" => "$" . $productPrice,
+            "productPhoto" => "http://localhost:8000/user/images/fans/" . $productPhoto . "",
+            "productColor" => $productColor,
+        ]);
+    }
 }

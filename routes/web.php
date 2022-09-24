@@ -11,4 +11,5 @@ Route::group(['prefix' => ''], function () {
     Route::get('/aboutus', [HomeController::class, 'aboutus']);
     Route::get('/contact', [HomeController::class, 'contact']);
     Route::post('/review/create/{productId}', [ProductsController::class, 'createreview']);
+    Route::get('/getProductQuickView', [ProductsController::class, 'getProductQuickView']);
 });

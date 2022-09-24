@@ -161,6 +161,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+
 /* Scolling */
 .ticker{
   position: fixed;
@@ -170,19 +171,15 @@ ul {
   display : flex
 }
 
-
-
 .ticker__list{
-
   display : flex;
   margin-top : 20px;
   animation : ticker 9s infinite linear;
 }
 
-  .ticker:hover .ticker__list{
-
-    animation-play-state : paused
-  }
+.ticker:hover .ticker__list{
+  animation-play-state : paused
+}
   
 .ticker__item{
  /* background-color: violet; */
@@ -194,15 +191,12 @@ ul {
   
 @keyframes ticker{
   from {
-
     transform : translateX(0)
   }to{
     transform : translateX(-100vw)
-
   }
-
-
 }
+
 /* Counter visitor */
 .website-counter {
   display: flex;

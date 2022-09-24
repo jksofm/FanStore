@@ -19,4 +19,10 @@ Route::group(['prefix' => ''], function () {
 Route::group(['prefix' => '/filter'], function () {
 
     Route::get('/getsearchajax', [FilterController::class, 'getsearchajax']);
+    Route::get('/getcategoryajax', [FilterController::class, 'getcategoryajax']);
+    Route::get('/getpriceajax', [FilterController::class, 'getpriceajax']);
+    Route::get('/clearfilterajax', [FilterController::class, 'clearfilterajax']);
+
+
+
 });

@@ -353,7 +353,7 @@
         <div class="ticker">
             <div class="ticker__list">
                 <div class="ticker__item">
-                    <!-- <h2 id="displayDateTime"></h2> -->
+                    <h2 id="displayDateTime"></h2>
                 </div>
             </div>
         </div>

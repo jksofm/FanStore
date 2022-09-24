@@ -1,5 +1,3 @@
-
-
 @extends('layout.userLayout')
 
 
@@ -67,19 +65,19 @@
             <div class="col-lg-9">
                 <div class="shop-topbar-wrapper">
                     <div class="product-sorting-wrapper">
-                        <div class="product-show shorting-style">
+                        <!-- <div class="product-show shorting-style">
                             <label>Sort by :</label>
                             <select>
                                 <option value="">Default</option>
                                 <option value=""> Name</option>
                                 <option value=""> price</option>
                             </select>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="shop-bottom-area">
                     <div class="tab-content jump">
-                        <div  class="tab-pane active">
+                        <div class="tab-pane active">
                             <div id="productcontent" class="row">
                                 @foreach($products as $product)
 
@@ -95,14 +93,14 @@
                                             </div>
                                         </div>
                                         <div class="product-content-wrap-2 text-center">
-                                          
+
                                             <h3><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <div class="product-price-2">
                                                 <span>${{$product->price}}</span>
                                             </div>
                                         </div>
                                         <div class="product-content-wrap-2 product-content-position text-center">
-                                         
+
                                             <h3><a href="{{url('/singleproduct/'.$product->id)}}">{{$product->name}}</a></h3>
                                             <div class="product-price-2">
                                                 <span>${{$product->price}}</span>
@@ -146,8 +144,12 @@
                         <h4 class="sidebar-widget-title">Category</h4>
                         <div class="shop-catigory">
                             <ul>
-                                <li><a href="shop.html">Category 1</a></li>
-                                <li><a href="shop.html">Category 2</a></li>
+                                <li class="category-item" data-categoryid="all">all</li>
+                                @foreach($category as $categoryitem)
+
+                                <li class="category-item" data-categoryid="{{$categoryitem->id}}">{{$categoryitem->name}}</li>
+                                @endforeach
+
 
                             </ul>
                         </div>
@@ -155,21 +157,25 @@
                     <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
                         <h4 class="sidebar-widget-title">Price Filter </h4>
                         <div class="price-filter">
-                            <span>Range: $100.00 - 1.300.00 </span>
-                            <div id="slider-range"></div>
+
                             <div class="price-slider-amount">
                                 <div class="label-input">
-                                    <input type="text" id="amount" name="price" placeholder="Add Your Price" />
+                                    Min :
+                                    <input type="number" id="min" name="minprice" placeholder="Add Your Min Price" />
                                 </div>
-                                <button type="button">Filter</button>
+                                <div class="label-input">
+                                    Max :
+                                    <input type="number" id="max" name="maxprice" placeholder="Add Your Max Price" />
+                                </div>
+                                <button id="btn-filter-price" type="button">Filter</button>
                             </div>
                         </div>
                     </div>
-                 
+
                     <div class="sidebar-widget shop-sidebar-border mb-40 pt-40">
-                        <h4 class="sidebar-widget-title">Color</h4>
+                        <!-- <h4 class="sidebar-widget-title">Color</h4> -->
                         <div class="sidebar-widget-list">
-                            <ul>
+                            <!-- <ul>
                                 <li>
                                     <div class="sidebar-widget-list-left">
                                         <input type="checkbox" value=""> <a href="#">Green <span>7</span> </a>
@@ -194,10 +200,11 @@
                                         <span class="checkmark"></span>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> -->
+                            <button id="btn-clear-filter" type="button">Clear All Filter</button>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
         </div>
@@ -234,69 +241,141 @@
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
+    const loadview = (data) => {
+
+
+        if (data.products.length > 0) {
+
+            var n = data.products.length;
+            var s = '';
+            for (var i = 0; i < n; i++) {
+                s += `
+                           <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                                   <div class="single-product-wrap mb-35">
+                                       <div class="product-img product-img-zoom mb-15">
+                                           <a href="{{url('/singleproduct/${data.products[i].id}')}}">
+                                               <img src="{{asset('user/images/fans/${data.products[i].photo}')}}" alt="">
+                                           </a>
+                                           <div class="product-action-2 tooltip-style-2">
+                                               <button title="Wishlist"><i class="icon-heart"></i></button>
+                                               <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                           </div>
+                                       </div>
+                                       <div class="product-content-wrap-2 text-center">
+                                         
+                                           <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
+                                           <div class="product-price-2">
+                                               <span>${data.products[i].price}</span>
+                                           </div>
+                                       </div>
+                                       <div class="product-content-wrap-2 product-content-position text-center">
+                                        
+                                           <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
+                                           <div class="product-price-2">
+                                               <span>${data.products[i].price}</span>
+                                           </div>
+                                           <div class="pro-add-to-cart">
+                                               <button title="Add to Cart">Add To Cart</button>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>
+                           `
+            }
+            $('#productcontent').html(s);
+        }
+
+    }
     $(document).ready(function() {
 
         $('#textboxName').keyup(function() {
             var query = $(this).val();
-           
-           
-              
-               $.ajax({
+
+
+
+            $.ajax({
                 type: 'GET',
                 url: "{{url('/filter/getsearchajax')}}",
                 data: {
                     query
                 },
-                success: function(data){
-                   
-                    if(data.products.length>0){
-                     
-                        var n = data.products.length;
-                        var s = '';
-                     for(var i=0; i<n; i++) {
-                            s+= `
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                                    <div class="single-product-wrap mb-35">
-                                        <div class="product-img product-img-zoom mb-15">
-                                            <a href="{{url('/singleproduct/${data.products[i].id}')}}">
-                                                <img src="{{asset('user/images/fans/${data.products[i].photo}')}}" alt="">
-                                            </a>
-                                            <div class="product-action-2 tooltip-style-2">
-                                                <button title="Wishlist"><i class="icon-heart"></i></button>
-                                                <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap-2 text-center">
-                                          
-                                            <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
-                                            <div class="product-price-2">
-                                                <span>${data.products[i].price}</span>
-                                            </div>
-                                        </div>
-                                        <div class="product-content-wrap-2 product-content-position text-center">
-                                         
-                                            <h3><a href="{{url('/singleproduct/${data.products[i].id}')}}">${data.products[i].name}</a></h3>
-                                            <div class="product-price-2">
-                                                <span>${data.products[i].price}</span>
-                                            </div>
-                                            <div class="pro-add-to-cart">
-                                                <button title="Add to Cart">Add To Cart</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            `
-                        }
-                        $('#productcontent').html(s);
-                    }
+                success: function(data) {
+                    loadview(data);
                 }
-               });
-            
+            });
+
         });
 
-       
+        $('.category-item').click(function() {
+
+            var categoryID = $(this).attr('data-categoryID');
+            console.log(categoryID);
+            if (categoryID !== "all") {
+
+                $.ajax({
+                    type: 'GET',
+                    url: "{{url('/filter/getcategoryajax')}}",
+                    data: {
+                        categoryID
+                    },
+                    success: function(data) {
+                        loadview(data);
+                    }
+
+                });
+            } else {
+
+                $.ajax({
+                    type: 'GET',
+                    url: "{{url('/filter/getcategoryajax')}}",
+                    data: {
+                        categoryID
+                    },
+                    success: function(data) {
+                        loadview(data);
+                    }
+                });
+            }
+        })
+
+        $('#btn-filter-price').click(function() {
+            console.log("hello")
+            var max = $("#max").val();
+            var min = $("#min").val();
+
+            $.ajax({
+                    type: 'GET',
+                    url: "{{url('/filter/getpriceajax')}}",
+                    data: {
+                        max,
+                        min
+                    },
+                    success: function(data) {
+                        loadview(data);
+                    }
+                });
+            
+
+        })
+        $('#btn-clear-filter').click(function() {
+            $.ajax({
+                    type: 'GET',
+                    url: "{{url('/filter/clearfilterajax')}}",
+                    data: {
+                    
+                    },
+                    success: function(data) {
+                        $('#textboxName').val(" ");
+                        var max = $("#max").val(" ");
+                        var min = $("#min").val(" ");
+                        loadview(data);
+                    }
+                });
+        })
+
+
 
     });
 </script>

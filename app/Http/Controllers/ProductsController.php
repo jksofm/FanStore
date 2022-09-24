@@ -13,7 +13,9 @@ class ProductsController extends Controller
     public function loadproducts()
     {
         $data = [
-            'products' => Product::get()
+            'products' => Product::get(),
+            'category' => Category::get(),
+
         ];
         return view('products/index')->with($data);
     }

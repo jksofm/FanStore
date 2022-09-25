@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
     <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
     <link rel="stylesheet" href="assets/css/style.min.css"> -->
-    
+
 </head>
 
 <body>
@@ -304,13 +304,11 @@
                                             </ul>
                                         </div>
                                     </div>
-                                    <div class="pro-details-size">
-                                        <span>Size:</span>
-                                        <div class="pro-details-size-content">
+                                    <div class="pro-details-color-wrap">
+                                        <span>Brand:</span>
+                                        <div class="pro-details-color-content">
                                             <ul>
-                                                <li><a href="#">S</a></li>
-                                                <li><a href="#">M</a></li>
-                                                <li><a href="#">L</a></li>
+                                                <li id="productQuickViewBrand">Brand</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -320,10 +318,17 @@
                                             <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1">
                                         </div>
                                     </div>
+                                    <div class="pro-details-color-wrap mt-4">
+                                        <span>Type:</span>
+                                        <div class="pro-details-color-content">
+                                            <ul>
+                                                <li id="productQuickViewCategory">Category</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                     <div class="product-details-meta">
                                         <ul>
-                                            <li><span>Type: </span><span>Loại quạt</span> </li>
-                                            <li><span><a href="#">Detail</a></span> </li>
+                                            <li><span><a id="productQuickViewID">Detail</a></span> </li>
                                         </ul>
                                     </div>
                                     <div class="pro-details-action-wrap">
@@ -416,7 +421,7 @@
     <script src="{{asset('user/js/plugins/scrollup.js')}}"></script>
     <script src="{{asset('user/js/plugins/ajax-mail.js')}}"></script>
 
-  
+
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above  
         <script src="{{asset('user/js/vendor/vendor.min.js')}}"></script>

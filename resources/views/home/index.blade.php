@@ -1,11 +1,12 @@
 <script>
-    function showDetails(animal) {
-        var productName = animal.getAttribute("data-name");
-        var productPrice = animal.getAttribute("data-price");
-        var productPhoto = animal.getAttribute("data-photo");
-        var productColor = animal.getAttribute("data-color");
-        // alert("The " + animal.innerHTML + " is a " + productPrice + ".");
-
+    function showDetails(fanInfo) {
+        var productName = fanInfo.getAttribute("data-name");
+        var productPrice = fanInfo.getAttribute("data-price");
+        var productPhoto = fanInfo.getAttribute("data-photo");
+        var productColor = fanInfo.getAttribute("data-color");
+        var productBrand = fanInfo.getAttribute("data-brand");
+        var productCategory = fanInfo.getAttribute("data-category");
+        var productID = fanInfo.getAttribute("data-id");
 
         $.ajax({
             type: "GET",
@@ -13,14 +14,20 @@
                 productName,
                 productPrice,
                 productPhoto,
-                productColor
+                productColor,
+                productBrand,
+                productCategory,
+                productID
             },
             url: "{{url('/getProductQuickView')}}",
             success: (data) => {
                 $('#productQuickViewName').html(data.productName),
                     $('#productQuickViewPrice').html(data.productPrice),
-                    $('#productQuickViewPhoto').attr('src', `{{asset('user/images/fans/${data.productPhoto}')}}`)
-                $('#productQuickViewColor').attr('class', data.productColor)
+                    $('#productQuickViewPhoto').attr('src', `{{asset('user/images/fans/${data.productPhoto}')}}`),
+                    $('#productQuickViewColor').attr('class', data.productColor),
+                    $('#productQuickViewBrand').html(data.productBrand),
+                    $('#productQuickViewCategory').html(data.productCategory),
+                    $('#productQuickViewID').attr('href', `{{url('singleproduct/${data.productID}')}}`)
             }
         })
     }
@@ -173,7 +180,7 @@
                                         <button><i class="icon-basket-loaded"></i>Add to Cart</button>
                                     </div>
                                     <div class="product-action-right tooltip-style">
-                                        <button onclick="showDetails(this)" id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-photo="{{$product->photo}}" data-color="{{$product->color}}" data-toggle="modal" data-target="#exampleModal" class="btnQuickView"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
+                                        <button onclick="showDetails(this)" id="{{$product->id}}" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-photo="{{$product->photo}}" data-color="{{$product->color}}" data-brand="{{$product->brand}}" data-category="{{$category[$product->categoryID -1]->name}}" data-toggle="modal" data-target="#exampleModal" class="btnQuickView"><i class="icon-size-fullscreen icons"></i><span>Quick View</span></button>
                                     </div>
                                 </div>
                             </div>

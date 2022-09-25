@@ -53,11 +53,17 @@ class ProductsController extends Controller
         $productPrice = $request->get('productPrice');
         $productPhoto = $request->get('productPhoto');
         $productColor = $request->get('productColor');
+        $productBrand = $request->get('productBrand');
+        $productCategory = $request->get('productCategory');
+        $productID = $request->get('productID');
         return response()->json([
             "productName" => $productName,
             "productPrice" => "$" . $productPrice,
-            "productPhoto" => $productPhoto ,
+            "productPhoto" => $productPhoto,
             "productColor" => $productColor,
+            "productBrand" => $productBrand,
+            "productCategory" => $productCategory,
+            "productID" => $productID,
         ]);
     }
 }

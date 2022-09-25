@@ -16664,6 +16664,7 @@ textarea:focus {
 .pro-details-color-content ul li {
   margin-right: 5px;
   display: inline-block;
+  text-transform: capitalize;
 }
 
 .pro-details-color-content ul li:last-child {

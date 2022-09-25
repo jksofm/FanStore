@@ -1,3 +1,37 @@
+<script>
+    function showDetails(fanInfo) {
+        var productName = fanInfo.getAttribute("data-name");
+        var productPrice = fanInfo.getAttribute("data-price");
+        var productPhoto = fanInfo.getAttribute("data-photo");
+        var productColor = fanInfo.getAttribute("data-color");
+        var productBrand = fanInfo.getAttribute("data-brand");
+        var productCategory = fanInfo.getAttribute("data-category");
+        var productID = fanInfo.getAttribute("data-id");
+
+        $.ajax({
+            type: "GET",
+            data: {
+                productName,
+                productPrice,
+                productPhoto,
+                productColor,
+                productBrand,
+                productCategory,
+                productID
+            },
+            url: "{{url('/getProductQuickView')}}",
+            success: (data) => {
+                $('#productQuickViewName').html(data.productName),
+                    $('#productQuickViewPrice').html(data.productPrice),
+                    $('#productQuickViewPhoto').attr('src', `{{asset('user/images/fans/${data.productPhoto}')}}`),
+                    $('#productQuickViewColor').attr('class', data.productColor),
+                    $('#productQuickViewBrand').html(data.productBrand),
+                    $('#productQuickViewCategory').html(data.productCategory),
+                    $('#productQuickViewID').attr('href', `{{url('singleproduct/${data.productID}')}}`)
+            }
+        })
+    }
+</script>
 @extends('layout.userLayout')
 
 
@@ -89,7 +123,7 @@
                                             </a>
                                             <div class="product-action-2 tooltip-style-2">
                                                 <button title="Wishlist"><i class="icon-heart"></i></button>
-                                                <button title="Quick View" data-toggle="modal" data-target="#exampleModal"><i class="icon-size-fullscreen icons"></i></button>
+                                                <button onclick="showDetails(this)" id="{{$product->id}}" data-id="{{$product->id}}" data-name="{{$product->name}}" data-price="{{$product->price}}" data-photo="{{$product->photo}}" data-color="{{$product->color}}" data-brand="{{$product->brand}}" data-category="{{$category[$product->categoryID -1]->name}}" title="Quick View" data-toggle="modal" data-target="#exampleModal" class="btnQuickView"><i class="icon-size-fullscreen icons"></i></button>
                                             </div>
                                         </div>
                                         <div class="product-content-wrap-2 text-center">
@@ -346,33 +380,33 @@
             var min = $("#min").val();
 
             $.ajax({
-                    type: 'GET',
-                    url: "{{url('/filter/getpriceajax')}}",
-                    data: {
-                        max,
-                        min
-                    },
-                    success: function(data) {
-                        loadview(data);
-                    }
-                });
-            
+                type: 'GET',
+                url: "{{url('/filter/getpriceajax')}}",
+                data: {
+                    max,
+                    min
+                },
+                success: function(data) {
+                    loadview(data);
+                }
+            });
+
 
         })
         $('#btn-clear-filter').click(function() {
             $.ajax({
-                    type: 'GET',
-                    url: "{{url('/filter/clearfilterajax')}}",
-                    data: {
-                    
-                    },
-                    success: function(data) {
-                        $('#textboxName').val(" ");
-                        var max = $("#max").val(" ");
-                        var min = $("#min").val(" ");
-                        loadview(data);
-                    }
-                });
+                type: 'GET',
+                url: "{{url('/filter/clearfilterajax')}}",
+                data: {
+
+                },
+                success: function(data) {
+                    $('#textboxName').val(" ");
+                    var max = $("#max").val(" ");
+                    var min = $("#min").val(" ");
+                    loadview(data);
+                }
+            });
         })
 
 

@@ -8150,10 +8150,19 @@ textarea:focus {
 .team-wrapper .team-img {
   overflow: hidden;
   position: relative;
+  border : 1px solid #ccc;
+  box-shadow: 0 3px 5px rgb(85 85 85 / 20%)
+
+
+  
 }
 
 .team-wrapper .team-img img {
-  width: 100%;
+  width: 80%;
+  display: block;
+  margin : 0 auto 10px;
+}
+.team-wrapper {
 }
 
 .team-wrapper .team-img .team-action {
@@ -8174,6 +8183,7 @@ textarea:focus {
   transition: all 0.6s ease 0s;
   width: 100%;
   z-index: 5;
+  
 }
 
 .team-wrapper .team-img .team-action a {

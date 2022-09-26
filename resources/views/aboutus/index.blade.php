@@ -97,7 +97,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team-wrapper mb-30">
                     <div class="team-img">
-                        <img src="{{asset('user/images/team/team-1.jpg')}}" alt="">
+                        <img src="{{asset('user/images/team/noavatar.jpg')}}" alt="">
 
                     </div>
                     <div class="team-content text-center">
@@ -109,7 +109,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team-wrapper mb-30">
                     <div class="team-img">
-                        <img src="{{asset('user/images/team/team-2.jpg')}}" alt="">
+                        <img src="{{asset('user/images/team/noavatar.jpg')}}" alt="">
 
                     </div>
                     <div class="team-content text-center">
@@ -121,7 +121,7 @@
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="team-wrapper mb-30">
                     <div class="team-img">
-                        <img src="{{asset('user/images/team/team-3.jpg')}}" alt="">
+                        <img src="{{asset('user/images/team/noavatar.jpg')}}" alt="">
                     </div>
                     <div class="team-content text-center">
                         <h4>Kha Ai</h4>

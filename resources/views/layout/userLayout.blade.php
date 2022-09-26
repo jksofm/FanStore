@@ -378,7 +378,7 @@
     <!-- Visitor count -->
     <script type="text/javascript">
         var counterContainer = document.querySelector(".website-counter");
-        var resetButton = document.querySelector("#reset");
+       
         var visitCount = localStorage.getItem("page_view");
 
         // Check if page_view entry is present
